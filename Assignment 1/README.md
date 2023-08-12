@@ -7,11 +7,15 @@ Write a program which takes as input a number of days and converts it into
 number(s) of year(s), week(s) and day(s). 
 For example, if the input is 385 then the output should be: 1 year 2 weeks 6 days. Assume, non-leap years.
 (2 Points) 
-#### [Prob1_Day-to-Year](Prob1_Day-to-Year.cpp)
+#### Solution:
+[Prob1_Day-to-Year](Prob1_Day-to-Year.cpp)
 
 ### Question 2:
 Write a program to calculate the following exprossion, where x is a real number:
 $$x + \left(\frac{1}{x + \left(\frac{1}{x + \frac{1}{x}}\right)}\right)$$
+
+#### Solution:
+[Prob2_Calc_exp](Prob2_Calc_exp.cpp)
 
 ### Question 3:
 Write a program to read the vowels {a, e, i, o, u} in five suitably declared
