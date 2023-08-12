@@ -5,4 +5,4 @@
 ## Assignments 
 
 - Assignment 1:
-1. [Assignment 1 CPP Lab](Assignments(Problems)/Assignment 1 CPP Lab.pdf)
+1. [Assignment 1 CPP Lab](Assignments(Problems)/Assignment-1-CPP_Lab.pdf)
