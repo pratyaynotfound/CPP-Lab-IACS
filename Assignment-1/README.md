@@ -25,7 +25,15 @@ Suppose we have five more variables "capVowel1" through "capVowel5", of the same
 type as that of "vowels1" through "vowels5" to store { A, E, I, 0, U} : Does the expression "capVowel2 - capVowel1" have the same value as that of "vowel2 - vowel1"?
 Explain your answers.
 
+Evaluate the following expression in your program: "x =y- 20 *6/9", by taking some value of y. Print the value of x. Do you see the expected result? Bring about minimum change(s) to modify your program to make it print the correct result.
+
+
 #### Solution:
 [Prob3_Vowels](Prob3_Vowels.cpp)
 - Yes, those are valid statements and the output of 1st statement is 4 because ascii value of 'e' is 101 and for 'a' it is 97 and 101-97=4. And for the 2nd statement ascii value of 'u' is 117 and for 'e' it is 101 and 117-101=16 is the output.
 - Yes, they have the same answer because again ascii 'A' is 65 and 'E' is 69 and again 69-65=4.
+
+##### Part 2:
+[Prob3_Pt2_evaluate](Prob3_Pt2_evaluate.cpp)
+- No I don't see the expected output.
+- Changed the expression form x=y-20*6/9 to x=y-20.0*6/9 and got the expected output.
