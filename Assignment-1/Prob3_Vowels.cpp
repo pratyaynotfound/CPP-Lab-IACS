@@ -12,11 +12,12 @@ int main(){
     //check if valid or not
     cout<<vowel2 - vowel1<<endl;
     cout<<vowel5 - vowel2<<endl;
-
+    
     //also check for capvowels
     char capvowel1 = 'A';
     char capvowel2 = 'E';
-    cout<<capvowel2 - capvowel1<<endl;
     
+    cout<<capvowel2 - capvowel1<<endl;
+
     return 0;
 }
