@@ -2,22 +2,22 @@
 using namespace std;
 
 int main(){
-    //make an array of the vowels
-    char vowel1 = 'a';
-    char vowel2 = 'e';
-    char vowel3 = 'i';
-    char vowel4 = 'o';
-    char vowel5 = 'u';
-
+    //declare an array of 5 characters
+    char vowels[5];
+    //take input
+    cout<<"Enter vowels(lower case):"<<endl;
+    for(int i = 0;i<5;i++){
+        cin>>vowels[i];
+    }
     //check if valid or not
-    cout<<vowel2 - vowel1<<endl;
-    cout<<vowel5 - vowel2<<endl;
+    cout<<vowels[1] - vowels[0]<<endl;
+    cout<<vowels[4] - vowels[1]<<endl;
     
     //also check for capvowels
     char capvowel1 = 'A';
     char capvowel2 = 'E';
     
-    cout<<capvowel2 - capvowel1<<endl;
+    cout<<"Result(cap):"<<capvowel2 - capvowel1<<endl;
 
     return 0;
 }
