@@ -38,3 +38,10 @@ Evaluate the following expression in your program: "x =y- 20 *6/9", by taking so
 [Prob3_Pt2_evaluate](Prob3_Pt2_evaluate.cpp)
 - No I don't see the expected output.
 - Changed the expression form x=y-20*6/9 to x=y-20.0*6/9 and got the expected output.
+
+### Question 4:
+Write a program which prints the in-memory binary representation of a positive and a negative integer. Verify whether negative numbers are stored in 2's complimcnt reprscntation.
+
+#### Solution:
+[Prob4-Bin_rep](Prob4-Bin_rep.cpp)
+
