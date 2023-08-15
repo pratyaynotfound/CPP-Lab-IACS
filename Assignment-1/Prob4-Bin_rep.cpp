@@ -23,7 +23,7 @@ bool check_2scomplement(int x,vector<int> original){
     }
     bool flag = true;
     for(int i:complement){
-        if(original[i]!=complement[i])
+        if(!(original[i]^complement[i]))
             flag = false;
     }
     return flag;
