@@ -45,3 +45,9 @@ Write a program which prints the in-memory binary representation of a positive a
 #### Solution:
 [Prob4-Bin_rep](Prob4-Bin_rep.cpp)
 
+#### Question 5:
+To round off a floating point number to the nearest integer, one adds 0.5 to the number and truncatcs it to an integer. Write a program which reads a real number and a positive k and rounds it off using this knowledge, to the nearest k-th place. Thus,
+if the number read is 23.59478261 and k = 1000, the rounding off is at the 1000-th place
+(after decimal) and thus the rounded off number is 23.595.
+
+##### Solution:
