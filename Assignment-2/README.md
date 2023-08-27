@@ -1,4 +1,5 @@
 # Assignment 2
+#### Answers are also availabe in [Answers.txt](answer.txt) format.
 
 ## Intended Functionality
 
@@ -29,5 +30,3 @@ while((n = read(sockfd,bytes,BUFSIZE)) > 0) {
   fwrite(bytes,n,sizeof(char),stdout);
 }
 ```
-
-
