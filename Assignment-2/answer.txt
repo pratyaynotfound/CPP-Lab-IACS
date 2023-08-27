@@ -1,20 +1,19 @@
 # Intended Functionality
 
-If we run 'server.c <port> <file>' in one terminal and in another terminal if we run 'client.c <local host ip>(127.0.0.1) <same port given in server.c>' then we should get the transmitted file and get it in another terminal. And if we are using 2 devices with in the same network then by using same port and the proper ip address of the other computer and transmit the text or message to another computer  
-
+If we run "server.c <port> <file>" in one terminal and "client.c <host ip>(127.0.0.1 for local host) <same port given in server.c>" in another terminal, we should be able to receive the transmitted file. Additionally, if two devices are connected to the same network, sending a text or message to a different computer can be done by using the same port and that computer's correct IP address.  
 
 
 # Errors:
 
 > server.c:
-1. The last braces was not closed.
+1. The final brace wasn't closed.
 2. 
   if (argc != 3) {
     puts("Usage: server <port> <file>");
     return 1;
   }
 
-  in this snippet we were giving 3 arguments port and transmission file and the file name itself total argument count is 3 but it this case it was 2.
+  Although the total number of arguments in this snippet was three—port, transmission file, and the file name—in actuality, there were only two.
 
 > client.c
 
@@ -24,5 +23,5 @@ If we run 'server.c <port> <file>' in one terminal and in another terminal if we
       fwrite(bytes,n,sizeof(char),stdout);
     }
 
-    in this case the bytes was decleared BUFSIZE-1 means if i have 16 bytes total it was declaring for 15 bytes.
+    In this instance, the bytes were declared as BUFSIZE-1, which means that even though I had 16 bytes total, it was only declaring for 15 bytes.
 
