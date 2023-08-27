@@ -1,0 +1,28 @@
+# Intended Functionality
+
+If we run 'server.c <port> <file>' in one terminal and in another terminal if we run 'client.c <local host ip>(127.0.0.1) <same port given in server.c>' then we should get the transmitted file and get it in another terminal. And if we are using 2 devices with in the same network then by using same port and the proper ip address of the other computer and transmit the text or message to another computer  
+
+
+
+# Errors:
+
+> server.c:
+1. The last braces was not closed.
+2. 
+  if (argc != 3) {
+    puts("Usage: server <port> <file>");
+    return 1;
+  }
+
+  in this snippet we were giving 3 arguments port and transmission file and the file name itself total argument count is 3 but it this case it was 2.
+
+> client.c
+
+1.  int n;
+    char bytes[BUFSIZE-1];
+    while((n = read(sockfd,bytes,BUFSIZE)) > 0) {
+      fwrite(bytes,n,sizeof(char),stdout);
+    }
+
+    in this case the bytes was decleared BUFSIZE-1 means if i have 16 bytes total it was declaring for 15 bytes.
+
