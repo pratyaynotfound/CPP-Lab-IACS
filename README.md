@@ -15,7 +15,7 @@
 [Assignment 2](Assignment-2)
 
 ### 2. Assignment 3:
-[Assignment 3 Problem](lab2.pdf)
+[Assignment 3 Problem](Assignments(Problems)/lab2.pdf)
 
 #### Solution:
-[Assignment 3](Assignments(Problems)/lab2.pdf)
+[Assignment 3](Assignment-3)
