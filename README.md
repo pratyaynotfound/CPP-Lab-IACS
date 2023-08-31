@@ -18,4 +18,4 @@
 [Assignment 3 Problem](lab2.pdf)
 
 #### Solution:
-[Assignment 3](Assignment-3)
+[Assignment 3](Assignments(Problems)/lab2.pdf)
