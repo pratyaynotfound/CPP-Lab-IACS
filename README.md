@@ -1,6 +1,8 @@
 # C++ Lab
 
 ## Welcome to the C++ Lab Repository
+- ### Name: Pratyay Sarkar
+- ### Roll: 2021UG015
 
 ## Assignments 
 ### 1.  Assignment 1: 
