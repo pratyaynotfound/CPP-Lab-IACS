@@ -11,7 +11,7 @@
 [Assignment 1](Assignment-1)
 
 ### 2. Assignment 2:
-[Assignment 2 Problem](C-prog-exercise.pdf)
+[Assignment 2 Problem](Assignment-2/C-prog-exercise.pdf)
 
 #### Solution:
 [Assignment 2](Assignment-2)
