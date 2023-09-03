@@ -16,7 +16,7 @@
 #### Solution:
 [Assignment 2](Assignment-2)
 
-### 2. Assignment 3:
+### 3. Assignment 3:
 [Assignment 3 Problem](Assignments(Problems)/lab2.pdf)
 
 #### Solution:
