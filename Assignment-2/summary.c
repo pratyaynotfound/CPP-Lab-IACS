@@ -40,32 +40,35 @@ int main(int argc, char *argv[])
         packetCount++;
         fclose(fptr);
     }
+    //get data offset
+    int headerLength = IP_HLEN(comp1.hlenver);
+    int dataOffset = headerLength * 4;
 
     // source ip
-    printf("%u.%u.%u.%u ",
+    printf("%u.%u.%u.%u \n",
            (comp1.src & 0xFF),
            (comp1.src >> 8) & 0xFF,
            (comp1.src >> 16) & 0xFF,
            (comp1.src >> 24) & 0xFF);
 
     // destination ip
-    printf("%u.%u.%u.%u ",
+    printf("%u.%u.%u.%u \n",
            (comp1.dst & 0xFF),
            (comp1.dst >> 8) & 0xFF,
            (comp1.dst >> 16) & 0xFF,
            (comp1.dst >> 24) & 0xFF);
 
     // IP-header length
-    printf("%d ", IP_HLEN(comp1.hlenver));
+    printf("%d \n", IP_HLEN(comp1.hlenver));
 
     // total length
-    printf("%d ", ntohs(comp1.len));
+    printf("%d \n", ntohs(comp1.len));
 
     // data offset
-    printf("%d", comp1.off);
+    printf("%d\n", dataOffset);
 
     // total no of ip packets
-    printf("%d\n", packetCount);
+    printf("%d\n\n", packetCount);
 
     return 0;
 }
