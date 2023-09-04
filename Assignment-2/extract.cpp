@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdint>
+#include <arpa/inet.h>
 using namespace std;
 
 //     0                   1                   2                   3   
@@ -33,6 +34,40 @@ struct ip {
     uint32_t opd;
 };
 
+//     0                   1                   2                   3   
+//     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |          Source Port          |       Destination Port        |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |                        Sequence Number                        |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |                    Acknowledgment Number                      |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |  Data |           |U|A|P|R|S|F|                               |
+//    | Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+//    |       |           |G|K|H|T|N|N|                               |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |           Checksum            |         Urgent Pointer        |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |                    Options                    |    Padding    |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    |                             data                              |
+//    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+struct tcp {
+    uint16_t srcprt;
+    uint16_t destprt;
+    uint32_t seq;
+    uint32_t ack;
+    uint32_t dta;
+    uint64_t off;
+    uint16_t chksum;
+    uint16_t urg;
+    uint32_t op_pad;
+    uint32_t data;
+};
+
+
 #define IP_HLEN(lenver) ((lenver & 0x0f) * 4) // Multiply by 4 to get the header length in bytes
 
 int main(int argc, char* argv[]) {
@@ -61,6 +96,7 @@ int main(int argc, char* argv[]) {
 
 
     std::vector<uint8_t> buffer(1);
+    int padding = 
     inputFile.seekg(packet.hlenver, std::ios::cur);
     int i = -1;
     while (inputFile.read(reinterpret_cast<char*>(buffer.data()), buffer.size())) {
