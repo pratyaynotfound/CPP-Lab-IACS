@@ -61,15 +61,16 @@ int main(int argc, char* argv[]) {
 
 
     std::vector<uint8_t> buffer(1);
-    inputFile.seekg(20, std::ios::cur);
+    inputFile.seekg(packet.hlenver, std::ios::cur);
     int i = -1;
     while (inputFile.read(reinterpret_cast<char*>(buffer.data()), buffer.size())) {
         uint8_t byte = buffer[0];
         char character = static_cast<char>(byte);
         i++;
-        if(i<IP_HLEN(packet.hlenver))
+        if(i<packet.hlenver)
             continue;
         outputFile<<character;
+        cout<<character;
     }
     cout<<endl;
 

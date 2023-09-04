@@ -53,12 +53,14 @@ int main(int argc, char *argv[])
     // get totoal packets of the file
     while (fread(&comp1, sizeof(struct ip), 1, fptr) == 1)
     {
-        packetCount++;
         fclose(fptr);
     }
     //get data offset
     int headerLength = IP_HLEN(comp1.hlenver);
     int dataOffset = headerLength * 4;
+
+    //total no if ip packets
+    packetCount = ntohs(comp1.len)/IP_HLEN(comp1.hlenver);
 
     // source ip
     printf("%u.%u.%u.%u \n",
@@ -75,7 +77,7 @@ int main(int argc, char *argv[])
            (comp1.dst >> 24) & 0xFF);
 
     // IP-header length
-    printf("%d \n", IP_HLEN(comp1.hlenver));
+    printf("%d \n", IP_HLEN(comp1.hlenver)*4);
 
     // total length
     printf("%d \n", ntohs(comp1.len));
