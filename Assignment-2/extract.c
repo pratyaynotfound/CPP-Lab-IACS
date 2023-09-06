@@ -93,7 +93,7 @@ int main(int argc,char *argv[]){
     ip_header *ip;
     tcp_header *tcp;
 
-    //fo through all the packets and check for data 
+    //go through all the packets and check for data 
     long i = 0;
     while(i<size){
         ip = (ip_header *)(buffer+i);
