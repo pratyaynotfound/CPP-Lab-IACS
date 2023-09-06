@@ -63,27 +63,27 @@ int main(int argc, char *argv[])
     packetCount = ntohs(comp1.len)/IP_HLEN(comp1.hlenver);
 
     // source ip
-    printf("%u.%u.%u.%u \n",
+    printf("%u.%u.%u.%u ",
            (comp1.src & 0xFF),
            (comp1.src >> 8) & 0xFF,
            (comp1.src >> 16) & 0xFF,
            (comp1.src >> 24) & 0xFF);
 
     // destination ip
-    printf("%u.%u.%u.%u \n",
+    printf("%u.%u.%u.%u ",
            (comp1.dst & 0xFF),
            (comp1.dst >> 8) & 0xFF,
            (comp1.dst >> 16) & 0xFF,
            (comp1.dst >> 24) & 0xFF);
 
     // IP-header length
-    printf("%d \n", IP_HLEN(comp1.hlenver)*4);
+    printf("%d ", IP_HLEN(comp1.hlenver));
 
     // total length
-    printf("%d \n", ntohs(comp1.len));
+    printf("%d ", ntohs(comp1.len));
 
     // data offset
-    printf("%d\n", dataOffset);
+    printf("%d ", dataOffset);
 
     // total no of ip packets
     printf("%d\n\n", packetCount);
