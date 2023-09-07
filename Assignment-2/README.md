@@ -47,5 +47,5 @@ pratyaysarkar@Pratyays-MacBook-Air Assignment-2 % ./summary message1
 - Extract the data from message2 and save this data into a new file called message2.jpg. By using a web-browser or otherwise, view this image. What does the image show? (If you cannot view the image you probably need to debug your code!)
 
 ### Output:
-- [Message 1](message1.txt)
-- [Message 2](message2.jpg)
+- [Message 1(.txt)](message1.txt)
+- [Message 2(.jpg)](message2.jpg)
