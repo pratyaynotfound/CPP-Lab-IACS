@@ -42,3 +42,7 @@ while((n = read(sockfd,bytes,BUFSIZE)) > 0) {
 pratyaysarkar@Pratyays-MacBook-Air Assignment-2 % ./summary message1
 128.232.1.219 128.232.9.6 5 60 20 12
 ```
+## Part 3:
+- Extract the data from message1 and save this data into a new file called message1.txt. View this image Does the message make sense? (If not, you probably need to debug your code!)
+- Extract the data from message2 and save this data into a new file called message2.jpg. By using a web-browser or otherwise, view this image. What does the image show? (If you cannot view the image you probably need to debug your code!)
+
