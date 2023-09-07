@@ -1,7 +1,7 @@
 # Assignment 2
 #### Answers are also availabe in [Answers.txt](answer.txt) format.
 
-## Intended Functionality
+## Part 1: Intended Functionality
 
 If we run `server.c <port> <file>` in one terminal and `client.c <host ip> <port>` in another terminal, we should be able to receive the transmitted file. Additionally, if two devices are connected to the same network, sending a text or message to a different computer can be done by using the same port and that computer's correct IP address.  
 
@@ -29,4 +29,16 @@ char bytes[BUFSIZE-1];
 while((n = read(sockfd,bytes,BUFSIZE)) > 0) {
   fwrite(bytes,n,sizeof(char),stdout);
 }
+```
+## Part 2: 
+
+- The IP addresses of machines A and B (source and destination)
+- The value of the first IP packet’s header size field (IHL – IP header length) • The length of the first IP packet in bytes (total length)
+- The value of the first TCP packet’s header size field (data offset)
+- The total number of IP packets in the trace
+
+### Output:
+```bash
+pratyaysarkar@Pratyays-MacBook-Air Assignment-2 % ./summary message1
+128.232.1.219 128.232.9.6 5 60 20 12
 ```
