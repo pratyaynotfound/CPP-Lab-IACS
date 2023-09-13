@@ -88,4 +88,4 @@ int main() {
 
 #### Q6. (3 points) Define a table of the names of months of an year and the number of days in each month. Print out this table. Do this twice: once using an array of char for the names and an array for the days and once using an array of structures, with the structure containing the name of the month and the number of days in it.
 
-> #### Solution: [Problem 6](Q6_months.cpp)
+> #### Solution: [Problem 6](Q6_Months.cpp)
