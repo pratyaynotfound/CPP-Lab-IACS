@@ -77,7 +77,6 @@ int main() {
 4. `int *ip = static_cast<int*>(v)` : This line uses `static_cast` to cast a `void*` to an `int*`. But originally the i was in `short
 
 > #### Solution: [Problem 4](Q4_Error_explain_and_correct.cpp)
-
 ---
 
 #### Q5. (1+1 points) Write a function that swaps (exchanges the values of) two integers. Use int* as the argument type. Write another swap function using int& as the argument type.
