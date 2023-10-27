@@ -102,7 +102,7 @@ val.i=5
 val.i=0
 pratyaysarkar@Pratyays-MacBook-Air Tests % 
 ```
-> Explain: In the main fucntion we create one instance of obj that is ```o```, then we call the member function and get one instance of foo that is stored inside ```val```, at this time the constructor of ```foo``` is called automatically and prints ```foo()``` in the console then we print the value of i in val by ```cout<<"val.i="<<val.i<<std::endl;``` then the object o is deleted.At thsi time the distructor of ```foo``` gets called automatically and ```~foo()``` is printed in the console, then again we try to print the value of i in ```val``` but it becomes a dangling pointer now as the foo object is deleted, so it prints 0 in the console.
+> Explain: In the main fucntion we create one instance of obj that is ```o```, then we call the member function and get one instance of foo that is stored inside ```val```, at this time the constructor of ```foo``` is called automatically and prints ```foo()``` in the console then we print the value of i in val by ```cout<<"val.i="<<val.i<<std::endl;``` then the object o is deleted. At this time the distructor of ```foo``` gets called automatically and ```~foo()``` is printed in the console, then again we try to print the value of i in ```val``` but it becomes a dangling pointer now as the foo object is deleted, so it prints 0 in the console.
 ## Q4: Explain the output of the program.
 ```cpp
 #include<iostream>
