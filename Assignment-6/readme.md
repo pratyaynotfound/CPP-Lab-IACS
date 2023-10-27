@@ -39,27 +39,70 @@ d: S s1 {(char*)nullptr};
 ```cpp
 struct foo{
     foo(){
-        cout<<"foo()\n;"
-    }
+        cout<<"foo()\n";
+    };
     ~foo(){
-        cout<<"~foo()\n;"
-    }
-    int i{5};
-}
+        cout<<"~foo()\n";
+    };
+    int i {5};
+};
 struct obj{
     const foo& getFoo(){
         return my_foo;
     };
     foo my_foo;
-}
+};
 int main(){
     obj *o = new obj();
-    const foo& val = o->getfoo();
+    const foo& val = o->getFoo();
     cout<<"val.i="<<val.i<<std::endl;
-    delete 0;
+    delete o;
     cout<<"val.i="<<val.i<<std::endl;
 }
 ```
+> Ans:
+> - There are some errors:
+> 1. The ```#include<iostream>``` is not present.
+> 2. ```using naespace std``` is not present.
+> 3. ```int i {5};``` this function definition doesnot declare parameters.
+> 4. ```foo``` has no member named ```i```.
+#### Correction:
+```cpp
+#include<iostream>
+using namespace std;
+struct foo{
+    foo() : i(5) {
+        cout << "foo()\n";
+    };
+    ~foo(){
+        cout<<"~foo()\n";
+    };
+    int i;
+};
+struct obj{
+    const foo& getFoo(){
+        return my_foo;
+    };
+    foo my_foo;
+};
+int main(){
+    obj *o = new obj();
+    const foo& val = o->getFoo();
+    cout<<"val.i="<<val.i<<std::endl;
+    delete o;
+    cout<<"val.i="<<val.i<<std::endl;
+}
+```
+```zsh
+pratyaysarkar@Pratyays-MacBook-Air CPP % cd "/Users/pratyaysarkar/Library/CloudStorage/OneDrive-Personal/CPP/Tests/" && g++ 1.cpp -o 1 && "/Users/pratyaysarkar/Library/CloudStorage/OneDrive-Personal/CP
+P/Tests/"1
+foo()
+val.i=5
+~foo()
+val.i=0
+pratyaysarkar@Pratyays-MacBook-Air Tests % 
+```
+> Explain: In the main fucntion we create one instance of obj that is ```o```, then we call the member function and get one instance of foo that is stored inside ```val```, at this time the constructor of ```foo``` is called automatically and prints ```foo()``` in the console then we print the value of i in val by ```cout<<"val.i="<<val.i<<std::endl;``` then the object o is deleted.At thsi time the distructor of ```foo``` gets called automatically and ```~foo()``` is printed in the console, then again we try to print the value of i in ```val``` but it becomes a dangling pointer now as the foo object is deleted, so it prints 0 in the console.
 ## Q4: Explain the output of the program.
 ```cpp
 #include<iostream>
