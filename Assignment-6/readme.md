@@ -37,13 +37,15 @@ d: S s1 {(char*)nullptr};
 > - For (1) we can say that ```nullptr``` can be treated as any type. So this results an ambiguity. And for (2) it is also the same as the ```nullptr``` can be casted as any type though it is casted to ```(char*)```. So this also results to an ambiguity.
 ## Q3: Explain the output of the program. Find an error.
 ```cpp
+#include<iostream>
+using namespace std;
 struct foo{
     foo(){
         cout<<"foo()\n";
-    };
+    }
     ~foo(){
         cout<<"~foo()\n";
-    };
+    }
     int i {5};
 };
 struct obj{
@@ -64,35 +66,6 @@ int main(){
 > - There are some errors:
 > 1. The ```#include<iostream>``` is not present.
 > 2. ```using naespace std``` is not present.
-> 3. ```int i {5};``` this function definition doesnot declare parameters.
-> 4. ```foo``` has no member named ```i```.
-#### Correction:
-```cpp
-#include<iostream>
-using namespace std;
-struct foo{
-    foo() : i(5) {
-        cout << "foo()\n";
-    };
-    ~foo(){
-        cout<<"~foo()\n";
-    };
-    int i;
-};
-struct obj{
-    const foo& getFoo(){
-        return my_foo;
-    };
-    foo my_foo;
-};
-int main(){
-    obj *o = new obj();
-    const foo& val = o->getFoo();
-    cout<<"val.i="<<val.i<<std::endl;
-    delete o;
-    cout<<"val.i="<<val.i<<std::endl;
-}
-```
 ```zsh
 pratyaysarkar@Pratyays-MacBook-Air CPP % cd "/Users/pratyaysarkar/Library/CloudStorage/OneDrive-Personal/CPP/Tests/" && g++ 1.cpp -o 1 && "/Users/pratyaysarkar/Library/CloudStorage/OneDrive-Personal/CP
 P/Tests/"1
