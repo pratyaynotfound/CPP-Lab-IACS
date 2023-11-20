@@ -14,8 +14,10 @@ c: X x2 {};
 d: X x3(1);
 ```
 ### Ans: 
-> - c: X x2 {}
+> - a: X x0;
+> - c: X x2 {};
 > - It seems to be creating an instance of x and initializing it with an empty list, but ```struct X``` doesnot have a constructor that takes no arguments, but it does have a coonstructor that takes integer arguments. Since there is no constructor that matches the empty initializer list, this statement is erroneous.
+> - And the first one is erroneous because in the presence of user-defined constructor the compiler generated constructor gets deleted. So there is no constructor that accepts an instance of x that has no constructor arguments.
 
 ## Q2: Consider the following structure defination:
 ```cpp
@@ -75,7 +77,7 @@ val.i=5
 val.i=0
 pratyaysarkar@Pratyays-MacBook-Air Tests % 
 ```
-> Explain: In the main fucntion we create one instance of obj that is ```o```, then we call the member function and get one instance of foo that is stored inside ```val```, at this time the constructor of ```foo``` is called automatically and prints ```foo()``` in the console then we print the value of i in val by ```cout<<"val.i="<<val.i<<std::endl;``` then the object o is deleted.At thsi time the distructor of ```foo``` gets called automatically and ```~foo()``` is printed in the console, then again we try to print the value of i in ```val``` but it becomes a dangling pointer now as the foo object is deleted, so it prints 0 in the console.
+> Explain: In the main fucntion we create one instance of obj that is ```o```, then we call the member function and get one instance of ```foo``` that is stored inside ```val```, at this time the constructor of ```foo``` is called automatically and prints ```foo()``` in the console then we print the value of i in val by ```cout<<"val.i="<<val.i<<std::endl;``` then the object o is deleted. At this time the distructor of ```foo``` gets called automatically and ```~foo()``` is printed in the console, then again we try to print the value of i in ```val``` but it becomes a dangling pointer now as the foo object is deleted, so it prints 0 in the console.
 ## Q4: Explain the output of the program.
 ```cpp
 #include<iostream>
