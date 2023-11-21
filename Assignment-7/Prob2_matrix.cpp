@@ -19,7 +19,7 @@ public:
 
 matrix matrix::operator+(matrix const& a){
     if(matr.size() != a.matr.size() || matr[0].size() != a.matr[0].size()){
-        throw std::invalid_argument("Matrices must have the same dimensions for addition");
+        throw std::invalid_argument("Matrices must have the same dimensions for addition!");
     }
     std::vector<std::vector<int>> result(matr.size(), std::vector<int>(matr.size(),0));
     for (size_t i = 0; i < matr.size(); ++i) {
@@ -31,7 +31,7 @@ matrix matrix::operator+(matrix const& a){
 }
 matrix matrix::operator-(matrix const& a){
     if(matr.size() != a.matr.size() || matr[0].size() != a.matr[0].size()){
-        throw std::invalid_argument("Matrices must have the same dimensions for substruction");
+        throw std::invalid_argument("Matrices must have the same dimensions for substruction!");
     }
     std::vector<std::vector<int>> result(matr.size(), std::vector<int>(matr.size(),0));
     for (size_t i = 0; i < matr.size(); ++i) {
@@ -43,7 +43,7 @@ matrix matrix::operator-(matrix const& a){
 }
 matrix matrix::operator*(matrix const& a){
     if(a.matr.size() != matr[0].size()){
-        throw std::invalid_argument("Matrices cannot be multiplied. Invalid dimensions.");
+        throw std::invalid_argument("Matrices cannot be multiplied. Invalid dimensions!");
     }
     std::vector<std::vector<int>> result(matr.size(), std::vector<int>(a.matr.size(),0));
     for (size_t i = 0; i < matr.size(); ++i) {
