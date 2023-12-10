@@ -52,3 +52,6 @@
 
 > Solution:
 [Assignment 8](Assignment-8)
+
+
+**I will update the readme files for all directories after my exam**
