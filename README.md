@@ -32,3 +32,23 @@
 
 > Solution:
 [Assignment 4](Assignment-4)
+
+**Assignment 5:**
+
+> Solution:
+[Assignment 5](Assignment-5)
+
+**Assignment 6:**
+
+> Solution:
+[Assignment 6](Assignment-6)
+
+**Assignment 7:**
+
+> Solution:
+[Assignment 7](Assignment-7)
+
+**Assignment 8:**
+
+> Solution:
+[Assignment 8](Assignment-8)
